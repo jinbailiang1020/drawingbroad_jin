@@ -171,6 +171,11 @@ public class DrawingBoard extends android.support.v7.widget.AppCompatImageView {
         isInterapt = interapt;
     }
     public boolean onTouchEvent(MotionEvent event) {
+            getParent().requestDisallowInterceptTouchEvent(isInterapt);
+        if(!isInterapt()){
+            return true;
+        }
+       
         float eventX = event.getX();
         float eventY = event.getY();
         this.isToched = true;
